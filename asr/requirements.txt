@@ -1,0 +1,15 @@
+# Dependencies for the ASR container.
+
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+
+nemo_toolkit[all]
+nemo_toolkit[asr]
+jiwer
+python-dotenv
+requests
+tqdm
+pycocotools
+pandas
+ipykernel
+cuda-python>=12.3
