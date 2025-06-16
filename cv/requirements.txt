@@ -1,0 +1,13 @@
+# Dependencies for the CV container.
+
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+ultralytics
+numpy
+opencv-python>=4.1.2
+pandas
+Pillow
+pyYAML
+requests
+tqdm
+scikit-learn

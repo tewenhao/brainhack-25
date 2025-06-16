@@ -1,0 +1,30 @@
+# Dataset root directory
+path: /home/jupyter/til25-import-torch/cv/aug_dataset_split  # or relative like: ../datasets/your_dataset
+
+# Relative paths from 'path'
+train: train
+val: val
+
+# Number of classes
+nc: 18
+
+# Class names
+names:
+  0: cargo aircraft
+  1: commercial aircraft
+  2: drone
+  3: fighter jet
+  4: fighter plane
+  5: helicopter
+  6: light aircraft
+  7: missile
+  8: truck
+  9: car
+  10: tank
+  11: bus
+  12: van
+  13: cargo ship
+  14: yacht
+  15: cruise ship
+  16: warship
+  17: sailboat
