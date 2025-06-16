@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pillow
+numpy
+
+# for cosine similarity
+# scikit-learn
+
+# for sobel similarity
+# opencv-python

@@ -47,3 +47,32 @@ The most likely reason was the test data contained extremely small objects (some
 data_aug.ipynb contains a custom augmentation script to extract the objects from each image via their bounding box, shrink it significantly before pasting back onto original images together with new labels.
 
 This boosted our final accuracy to around 0.75 for the in person stage.
+
+## Optical Character Recognition (OCR)
+
+## Reinforcement Learning (RL)
+
+## Surprise Challenge
+
+The surprise challenge involved reconstructing a shredded document from a set of vertical image strips. Each strip represented a vertical slice of the original image, and our goal was to determine the correct ordering of the strips to reassemble the document. We were told to assume that all slices were upright and of equal dimensions.
+
+We modelled this problem as a Travelling Salesperson Problem (TSP). By defining a pairwise similarity score between every two slices—based on how well the right edge of one matched the left edge of another—we constructed a similarity matrix. The task then reduced to finding a Hamiltonian path through the strips that minimised the total "dissimilarity" score.
+
+### Edge Similarity Metrics
+
+We experimented with several edge similarity metrics:
+
+- Mean Squared Error (MSE) between edge pixels
+- Cosine similarity of edge vectors
+- Sobel-based gradient similarity
+- Structural Similarity Index Measure (SSIM)
+
+Ultimately, we chose MSE due to its simplicity, ease of implementation, and surprisingly competitive performance. Our key insight was that performance improved significantly when we reduced the edge comparison width, likely because a narrower edge minimised noise from image content and focused comparison on direct pixel transitions.
+
+### TSP Strategy
+
+To solve the TSP, we implemented a greedy nearest-neighbour heuristic. For robustness, we ran this heuristic starting from every possible node (i.e., treating each strip as a potential leftmost edge) and selected the route with the lowest overall dissimilarity score. While we recognise that dynamic programming or more advanced solvers (like OR-Tools or Held-Karp) could yield more optimal results or better performance, we opted for the simpler greedy approach due to the limited time available (only one day).
+
+### Reflections
+
+This challenge highlighted how effective simple heuristics and basic image processing techniques can be when paired with the right formulation. While our implementation could certainly be optimised further—particularly in terms of TSP solving—we're pleased with the performance improvements achieved through careful metric selection and parameter tuning.
