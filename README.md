@@ -50,6 +50,22 @@ This boosted our final accuracy to around 0.75 for the in person stage.
 
 ## Optical Character Recognition (OCR)
 
+For this year's TIL-AI, the OCR task was added, which was to produce a transcription given an image of a scanned document. We were provided with JPEG image files, text files with the actual text in each image, and a [hOCR](https://en.wikipedia.org/wiki/HOCR) that included word-, line-, and paragraph-level bounding boxes to train our OCR model.
+
+### Tesseract
+
+For the qualifiers, we decided to use Google's Tesseract OCR engine, specifically [`pytesseract`](https://github.com/h/pytesseract), a wrapper of the OCR engine for Python. When we ran the pre-trained model, the evaluation score was not great, with an accuracy score of **0.779** and a speed score of **0.268**. It was then we realized that `pytesseract` does not run on GPU, which means that we would be limiting our OCR performance if we continued using our CPU bound model. Thus, we knew that we had to look into other alternatives that can offer better performance, as well as the option for fine-tuning.
+
+### EasyOCR
+
+One option that we pursued was [EasyOCR](https://github.com/JaidedAI/EasyOCR), which offered better performance on noisy images and the ability to fine-tune. However, when we ran the pre-trained model, it took way too long, with a shocking speed score of **0.000**. We were less than thrilled, but we still had one thing we could try: fine-tuning it with our training data set.
+
+To fine-tune our EasyOCR model, we followed a guide by Eivind Kjosbakken [here](https://www.freecodecamp.org/news/how-to-fine-tune-easyocr-with-a-synthetic-dataset/). It involves using the [`deep-text-recognition-benchmark`](https://github.com/clovaai/deep-text-recognition-benchmark})repository to convert our images to the Lightning Memory-Mapped Database Manager (LMDB) format for training. After performing data pre-processing as outlined in the aforementioned guide, we tried running the training script, but alas to no avail.
+
+It is important to note that while the guide above is generally useful, there are a lot of missing information that can make the process confusing. One of which is how to use your custom fine-tuned model with the `easyocr` Python module. Steps are outlined in the EasyOCR repository to do so, but still it is lacking a lot of details, such as how to setup the model configuration file, which requires information about the model architecture etc.
+
+Despite our best efforts to fine-tune it, EasyOCR was not a good fit for our OCR task.
+
 ## Reinforcement Learning (RL)
 
 ## Surprise Challenge
