@@ -50,21 +50,31 @@ This boosted our final accuracy to around 0.75 for the in person stage.
 
 ## Optical Character Recognition (OCR)
 
-For this year's TIL-AI, the OCR task was added, which was to produce a transcription given an image of a scanned document. We were provided with JPEG image files, text files with the actual text in each image, and a [hOCR](https://en.wikipedia.org/wiki/HOCR) that included word-, line-, and paragraph-level bounding boxes to train our OCR model.
+For this year's TIL-AI, an OCR task was introduced. The objective was to produce accurate transcriptions from scanned document images. We were provided JPEG image files, corresponding text files, and [hOCR](https://en.wikipedia.org/wiki/HOCR) annotations containing word-, line-, and paragraph-level bounding boxes to train our OCR model.
 
 ### Tesseract
 
-For the qualifiers, we decided to use Google's Tesseract OCR engine, specifically [`pytesseract`](https://github.com/h/pytesseract), a wrapper of the OCR engine for Python. When we ran the pre-trained model, the evaluation score was not great, with an accuracy score of **0.779** and a speed score of **0.268**. It was then we realized that `pytesseract` does not run on GPU, which means that we would be limiting our OCR performance if we continued using our CPU bound model. Thus, we knew that we had to look into other alternatives that can offer better performance, as well as the option for fine-tuning.
+For the qualifiers, we started with Google’s Tesseract OCR engine, using the [`pytesseract`](https://github.com/h/pytesseract) Python wrapper. While easy to set up and use, its performance was underwhelming: an accuracy score of **0.779** and a speed score of **0.268**. We soon realised a key limitation—Tesseract runs on the CPU only. Given how much time inference took, we knew we had to move to GPU-compatible models that allowed fine-tuning.
 
 ### EasyOCR
 
-One option that we pursued was [EasyOCR](https://github.com/JaidedAI/EasyOCR), which offered better performance on noisy images and the ability to fine-tune. However, when we ran the pre-trained model, it took way too long, with a shocking speed score of **0.000**. We were less than thrilled, but we still had one thing we could try: fine-tuning it with our training data set.
+Next, we explored [EasyOCR](https://github.com/JaidedAI/EasyOCR), which showed more promise—on paper. It performed better on noisy images and offered fine-tuning capabilities. Unfortunately, the pre-trained model was extremely slow, yielding a speed score of **0.000**.
 
-To fine-tune our EasyOCR model, we followed a guide by Eivind Kjosbakken [here](https://www.freecodecamp.org/news/how-to-fine-tune-easyocr-with-a-synthetic-dataset/). It involves using the [`deep-text-recognition-benchmark`](https://github.com/clovaai/deep-text-recognition-benchmark})repository to convert our images to the Lightning Memory-Mapped Database Manager (LMDB) format for training. After performing data pre-processing as outlined in the aforementioned guide, we tried running the training script, but alas to no avail.
+Hoping to improve performance, we attempted to fine-tune EasyOCR using our dataset. Following [a guide by Eivind Kjosbakken](https://www.freecodecamp.org/news/how-to-fine-tune-easyocr-with-a-synthetic-dataset/), we preprocessed our data and converted it into LMDB format using the [`deep-text-recognition-benchmark`](https://github.com/clovaai/deep-text-recognition-benchmark) repository. However, running the training scripts proved fruitless.
 
-It is important to note that while the guide above is generally useful, there are a lot of missing information that can make the process confusing. One of which is how to use your custom fine-tuned model with the `easyocr` Python module. Steps are outlined in the EasyOCR repository to do so, but still it is lacking a lot of details, such as how to setup the model configuration file, which requires information about the model architecture etc.
+While the guide was a helpful starting point, it lacked clarity on crucial integration steps—especially when trying to load the fine-tuned model back into the `easyocr` Python module. Despite additional documentation in the EasyOCR repo, missing details such as how to correctly configure the model architecture made it frustrating to work with. Ultimately, EasyOCR didn’t make the cut.
 
-Despite our best efforts to fine-tune it, EasyOCR was not a good fit for our OCR task.
+### PaddleOCR
+
+We also considered PaddleOCR, which showed initial promise. However, integrating it into our setup turned out to be a major blocker. We eventually discovered—after the submission deadline and some helpful conversations with other teams—that our Python version was incompatible and that Paddle had to be downgraded to version `2.5.2` for CPU inference to work.
+
+As for GPU inference, Ada from the tech team kindly informed us that we’d need to build PaddleOCR from source with `CUDA 12.8`. Unfortunately, given our time constraints and other priorities, we were unable to overcome this setup hurdle, and had to abandon PaddleOCR as a viable option.
+
+### SmolDocling
+
+We also explored the use of Visual Language Models (VLMs), which have shown strong performance on OCR-style tasks. One model we tested was [`SmolDocling`](https://huggingface.co/ds4sd/SmolDocling-256M-preview).
+
+In our early tests, SmolDocling produced excellent results when run on individual images. However, it failed to scale when evaluated on the hidden test set—timing out repeatedly. The root cause appeared to be its reliance on [`flash attention`](https://github.com/Dao-AILab/flash-attention), an optimised attention mechanism that wasn't supported by our environment. Installing it via `pip` was also extremely slow, making it impractical to use under competition constraints.
 
 ## Reinforcement Learning (RL)
 

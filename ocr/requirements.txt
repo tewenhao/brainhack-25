@@ -1,0 +1,7 @@
+# Dependencies for the OCR container.
+
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+pytesseract==0.3.13
+pillow==11.2.1
+opencv-python-headless==4.11.0.86
