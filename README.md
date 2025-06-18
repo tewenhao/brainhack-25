@@ -1,33 +1,41 @@
 # Import Torch
 
-In 2024, we were known as [`dingdongs`](https://github.com/qitianshi/brainhack-24). Participating in the Novice category of TIL-AI 2024, we made it through to the finals, confident that with our model performances, we would secure a placing on the podium. The actual run however proved us all wrong: one specific testcase failed entirely, costing us 100 precious points as we slipped from 2nd place to 4th, and we were not be able to catch up.
+Back in 2024, we were known as [`dingdongs`](https://github.com/qitianshi/brainhack-24), competing in the Novice category of TIL-AI. We made it to the finals, confident that our models would carry us to the podium. But reality hit hard — one test case failed completely, costing us 100 precious points and dropping us from 2nd to 4th.  
 
-The reason why said test case failed? We _literally_ forgot to `import torch`.
+Why did it fail?  
+We _literally_ forgot to `import torch`.
 
-This year was different — none of us could commit full-time, none of us were confident in making it past qualifers. We were only here because Tianshi got poached by the organisers (because of the `import torch` story) and we really just went to support our friend.
+Fast forward to this year: none of us could commit full-time, and none of us expected to even make it past the qualifiers. We were only here because Tianshi got poached by the organisers — ironically, because of the very `import torch` story — and we joined to support a friend.
 
-Qualifers were nothing but smooth — errors everywhere, dead ends with most models that we tried, and we were 40th place in the qualifers on the last day. Hours before the deadline, a few of us sat in our discord call, and decided on a hail mary submission for the Reinforcement Learning component — and we made _the great leap forward_ from 40th to 10th, leapfrogging 30 teams in the process and squeezing into the top 16 to make it to the semi-finals.
+The qualifiers were far from smooth. Errors were everywhere, most of our models hit dead ends, and on the final day, we were sitting at 40th place. In a last-ditch effort, a few of us hopped into a Discord call and made a Hail Mary submission for the Reinforcement Learning component.  
 
-We thought our story would end there, but that proved to only be the start of our fairytale run — upseeding higher seeded teams in the semi-finals with better performing algorithms for our guards and scouts, and eventually placing 2nd in the finals.
+Somehow, that single move launched us from 40th to 10th — leapfrogging 30 teams and squeezing into the top 16 for the semi-finals.
 
-While we didn't win 1st place, if you considered what we went through last year, the storywriting couldn't have been any better. None of us could have predicted any of this, and as we always joke about it, _"We have reclaimed what was rightfully ours."_
+We thought that would be the end of our story. Instead, it became the start of our fairytale run. We upseeded stronger teams in the semis with better-performing algorithms for our guards and scouts, and ultimately secured **2nd place** in the finals.
 
-## Everything in between
+We didn’t win 1st — but looking at where we came from, the story couldn't have been written better. As we like to say:  
+_“We’ve reclaimed what was rightfully ours.”_
 
-Here, you will find what we thought were the best representations of us in this year's TIL-AI — the code, Dockerfiles, and everything else in between. Our [writeups](./writeup.md) are accessible in this same repository as well.
+## Everything in Between
 
-## Acknowledgement
+In this repository, you’ll find what we believe best represents our journey through this year’s TIL-AI — our code, Dockerfiles, experiments, and everything else in between. Our full [writeups](./writeup.md) are available here as well.
 
-Our brilliant and dedicated team — Brian Hu [@BrianHuBuyan](https://github.com/BrianHuBuyan), Neo Souw Chuan [@neosouwchuan](https://github.com/neosouwchuan), Tew En Hao [@tewenhao](https://github.com/tewenhao) and Wong Zenwei [@zeotheburrito](https://github.com/zeotheburrito).
+## Acknowledgements
 
-Qi Tianshi [@qitianshi](https://github.com/qitianshi) for relentlessly pushing all of us to go for this iteration's brainhack.
+To the brilliant and dedicated team:  
+Brian Hu [@BrianHuBuyan](https://github.com/BrianHuBuyan)  
+Neo Souw Chuan [@neosouwchuan](https://github.com/neosouwchuan)  
+Tew En Hao [@tewenhao](https://github.com/tewenhao)  
+Wong Zenwei [@zeotheburrito](https://github.com/zeotheburrito)
 
-Ryan [@ryan-tribex](https://github.com/ryan-tribex), Ada [@HoWingYip](https://github.com/HoWingYip), Tianshi and the teams at AngelHack and DSTA, for putting together such a fantastic event.
+To Qi Tianshi [@qitianshi](https://github.com/qitianshi), for relentlessly pushing us to join BrainHack again.
 
-The open source communities behind the models and code that made this project possible.
+To Ryan [@ryan-tribex](https://github.com/ryan-tribex), Ada [@HoWingYip](https://github.com/HoWingYip), Tianshi, and the amazing teams at AngelHack and DSTA — thank you for building such a fantastic event.
+
+And to the open-source communities behind the models and frameworks that powered this project — we couldn’t have done it without you.
 
 ## License
 
-Copyright 2025 Brian Hu, Neo Souw Chuan, Tew En Hao and Wong Zenwei. All rights reserved.
+© 2025 Brian Hu, Neo Souw Chuan, Tew En Hao, and Wong Zenwei. All rights reserved.
 
-This is proprietary software — it's neither open source nor freely available. [See the license](./LICENSE).
+This is proprietary software — not open source and not freely available. [See the license](./LICENSE).
