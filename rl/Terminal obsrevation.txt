@@ -1,0 +1,28 @@
+[0. 0. 0. 0. 0.]
+[False False False False  True]
+[{'distance': np.float64(9.0), 'manhattan': np.int64(9), 'TimeLimit.truncated': False}, {'distance': np.float64(8.0), 'manhattan': np.int64(8), 'TimeLimit.truncated': False}, {'distance': np.float64(11.0), 'manhattan': np.int64(11), 'TimeLimit.truncated': False}, {'distance': np.float64(14.0), 'manhattan': np.int64(14), 'TimeLimit.truncated': False}, {'distance': np.float64(15.0), 'manhattan': np.int64(15), 'TimeLimit.truncated': False, 'terminal_observation': {'viewcone': array([[  3,   0,   0,   0,   2],
+       [ 18,  34,   0,  66,  50],
+       [  0, 146,  74,  50,   0],
+       [  0,  82,  35,   0,   0],
+       [  0,   0, 146,   0,   0],
+       [  0,   0,   0,   0,   0],
+       [  0,   0,   0,   0,   0]], dtype=uint8), 'direction': np.uint8(1), 'location': array([ 4, 12], dtype=uint8), 'scout': 0, 'step': 80}}]
+
+
+reset new obs 0 {'viewcone': [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [67, 66, 102, 0, 0], [2, 3, 34, 0, 0], [2, 3, 35, 0, 0], [2, 2, 34, 0, 0], [2, 2, 34, 0, 0]], 'direction': 1, 'location': [0, 0], 'scout': 1, 'step': 0}
+
+reset new obs 2 {'viewcone': [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 194, 90, 66, 35], [0, 163, 0, 162, 0], [82, 0, 0, 0, 18], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]], 'direction': 1, 'location': [7, 13], 'scout': 0, 'step': 0}
+
+loaded rl out folder 0
+reset new obs 0 {'viewcone': [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 194, 90, 66, 35], [0, 163, 0, 162, 0], [82, 0, 0, 0, 18], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]], 'direction': 1, 'location': [7, 13], 'scout': 0, 'step': 0}
+
+loaded rl out folder 2
+reset new obs 2 {'viewcone': [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 194, 90, 66, 35], [0, 163, 0, 162, 0], [82, 0, 0, 0, 18], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]], 'direction': 1, 'location': [7, 13], 'scout': 0, 'step': 0}
+loaded rl out folder 0
+reset new obs 0 {'viewcone': [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [66, 66, 102, 0, 0], [2, 2, 34, 0, 0], [2, 19, 34, 0, 0], [50, 0, 34, 0, 0], [0, 0, 162, 0, 0]], 'direction': 1, 'location': [0, 0], 'scout': 1, 'step': 0}
+
+loaded rl out folder 2
+reset new obs 2 {'viewcone': [[0, 0, 0, 0, 0], [66, 35, 0, 0, 0], [3, 2, 74, 66, 67], [2, 2, 3, 2, 2], [2, 2, 2, 2, 2], [18, 2, 2, 2, 2], [0, 130, 18, 18, 2]], 'direction': 0, 'location': [3, 9], 'scout': 0, 'step': 0}
+
+reset new obs 0 {'viewcone': [[0, 0, 0, 0, 0], [66, 35, 0, 0, 0], [3, 2, 74, 66, 67], [2, 2, 3, 2, 2], [2, 2, 2, 2, 2], [18, 2, 2, 2, 2], [0, 130, 18, 18, 2]], 'direction': 0, 'location': [3, 9], 'scout': 0, 'step': 0}
+reset new obs 2 {'viewcone': [[0, 0, 0, 0, 0], [66, 35, 0, 0, 0], [3, 2, 74, 66, 67], [2, 2, 3, 2, 2], [2, 2, 2, 2, 2], [18, 2, 2, 2, 2], [0, 130, 18, 18, 2]], 'direction': 0, 'location': [3, 9], 'scout': 0, 'step': 0}

@@ -1,0 +1,10 @@
+# Dependencies for RL.
+
+fastapi
+uvicorn[standard]
+numpy
+gymnasium
+pettingzoo
+mazelib
+pygame
+supersuit

@@ -1,0 +1,1 @@
+{"--env_num": "1", "--n_steps": "1024", "--total_timestep": "4000000", "--save_name": "19_05_2025_13_43_48", "--adapted_obs": "True", "--guard_distance_reward": "True"}
