@@ -79,9 +79,12 @@ In our early tests, SmolDocling produced excellent results when run on individua
 ## Reinforcement Learning (RL)
 
 Model training failed.
+
 So we made an algo that came out of desperation.
+
 For scout it calculates the value of every cell in the map. The value of each cell is determined by the value of the points on it and cells that are further from the Scout, it is also affected by the presence of enemies nearby the cell.
 Because it was a last minute solution, it's calculation are nowhere as precise as the first place algorithm.
+
 For guards it just heads for set positions around the map and chases the Scout if the guard sees it. It only stops once it is near the last seen position of the scout and cannot see the scout.
 
 
