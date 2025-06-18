@@ -33,9 +33,3 @@ To Qi Tianshi [@qitianshi](https://github.com/qitianshi), for relentlessly pushi
 To Ryan [@ryan-tribex](https://github.com/ryan-tribex), Ada [@HoWingYip](https://github.com/HoWingYip), Tianshi, and the amazing teams at AngelHack and DSTA — thank you for building such a fantastic event.
 
 And to the open-source communities behind the models and frameworks that powered this project — we couldn’t have done it without you.
-
-## License
-
-© 2025 Brian Hu, Neo Souw Chuan, Tew En Hao, and Wong Zenwei. All rights reserved.
-
-This is proprietary software — not open source and not freely available. [See the license](./LICENSE).
