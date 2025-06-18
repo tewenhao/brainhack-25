@@ -9,7 +9,7 @@ Fast forward to this year: none of us could commit full-time, and none of us exp
 
 The qualifiers were far from smooth. Errors were everywhere, most of our models hit dead ends, and on the final day, we were sitting at 40th place. In a last-ditch effort, a few of us hopped into a Discord call and made a Hail Mary submission for the Reinforcement Learning component.  
 
-Somehow, that single move launched us from 40th to 10th — leapfrogging 30 teams and squeezing into the top 16 for the semi-finals, in what we liked to call _the Great Leap Forward_.
+Somehow, that single move launched us from 40th to 10th — leapfrogging 30 teams and squeezing into the top 16 for the semi-finals, in what we called _the Great Leap Forward_.
 
 We thought that would be the end of our story. Instead, it became the start of our fairytale run. We upseeded stronger teams in the semis with better-performing algorithms for our guards and scouts, and ultimately secured **2nd place** in the finals.
 
